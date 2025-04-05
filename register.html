@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - EmitTech Currency Converter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Centered Logo -->
+  <div class="top-logo">
+    <img src="logo.png" alt="EmitTech Logo">
+  </div>
+
+  <div class="container">
+    <div class="content-section">
+      <h1>Create an Account</h1>
+
+      <form id="registerForm" action="#" method="POST">
+        <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
+
+        <input type="email" id="email" name="email" placeholder="Email Address" required>
+
+        <input type="email" id="confirmEmail" name="confirmEmail" placeholder="Confirm Email Address" required>
+
+        <input type="password" id="password" name="password" placeholder="Password" required minlength="6">
+
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required minlength="6">
+
+        <button type="submit" class="btn">Register</button>
+      </form>
+
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+  </div>
+
+  <!-- JavaScript for Validation -->
+  <script>
+    const form = document.getElementById('registerForm');
+
+    form.addEventListener('submit', function (event) {
+      const email = document.getElementById('email').value;
+      const confirmEmail = document.getElementById('confirmEmail').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      if (email !== confirmEmail) {
+        alert('Emails do not match. Please check.');
+        event.preventDefault();
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        alert('Passwords do not match. Please check.');
+        event.preventDefault();
+        return;
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+
